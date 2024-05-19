@@ -4,6 +4,7 @@ import {app} from "../firebase"
 import {current} from "@reduxjs/toolkit"
 import {useSelector} from "react-redux"
 import {useNavigate} from "react-router-dom"
+import Header from "../components/Header";
 
 
 const CreateListing = () => {
@@ -15,6 +16,7 @@ const CreateListing = () => {
     description:"",
     address: "",
     type: "rent",
+    contact:"",
     bedrooms:1,
     bathrooms:1,
     regularPrice:50,
@@ -161,6 +163,8 @@ const handleSubmit =async (e) =>{
 }
 
   return (
+    <>
+    <Header />
     <main className="p-3 max-w-4xl mx-auto">
       <h1 className="text-3xl font-semibold text-center my-7">
         Create Listing
@@ -178,6 +182,7 @@ const handleSubmit =async (e) =>{
             onChange={handleChange}
             value={formData.name}
           />
+          
           <textarea
             type="text"
             placeholder="Description"
@@ -195,6 +200,15 @@ const handleSubmit =async (e) =>{
             required
             onChange={handleChange}
             value={formData.address}
+          />
+          <input
+            type="text"
+            placeholder="contact"
+            className="border p-3 rounded-lg"
+            id="contact"
+            required
+            onChange={handleChange}
+            value={formData.contact}
           />
           <div className="flex gap-6 flex-wrap">
             <div className="flex gap-2">
@@ -328,6 +342,7 @@ const handleSubmit =async (e) =>{
         </div>
       </form>
     </main>
+    </>
   );
 };
 

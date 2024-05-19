@@ -5,6 +5,7 @@ import SwiperCore from "swiper";
 import { Navigation } from "swiper/modules";
 import "swiper/css/bundle";
 import { useSelector } from "react-redux";  
+import Header from "../components/Header";
 
 import {
     FaBath,
@@ -16,6 +17,7 @@ import {
     FaShare,
   } from 'react-icons/fa';
 import Contact from "../components/Contact";
+import { list } from "firebase/storage";
 
 const Listing = () => {
   SwiperCore.use([Navigation]);
@@ -57,6 +59,8 @@ const Listing = () => {
   }, [params.listingId]);
 
   return (
+    <>
+    <Header />
     <main>
       {loading && <p className="text-center my-7 text-2xl">Loading...</p>}
       {error && (
@@ -143,15 +147,11 @@ const Listing = () => {
               <li className='flex items-center gap-1 whitespace-nowrap '>
                 <FaChair className='text-lg' />
                 {listing.furnished ? 'Furnished' : 'Unfurnished'}
+                
               </li>
             </ul>
-            
-            {currentUser && listing.userRef !== currentUser._id && !contact && (
-                <button
-                    onClick = {() => setContact(true)}
-                    className="bg-slate-700 text-white rounded-lg uppercase p-3 hover:opacity-95"
-                >Contact Landlord</button>
-            )}
+            <div></div>
+             
             
             {contact && <Contact listing={listing} /> }
 
@@ -160,6 +160,7 @@ const Listing = () => {
         </div>
       )}
     </main>
+    </>
   );
 };
 

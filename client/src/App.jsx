@@ -11,14 +11,16 @@ import CreateListing from './pages/CreateListing'
 import UpdateListing from "./pages/UpdateListing";
 import Listing from "./pages/Listing";
 import Search from "./pages/Search";
+import Contacts from './pages/Contacts'
 
 const App = () => {
   return (
     <BrowserRouter>
-    <Header />
+   
     <Routes>
       <Route path='/' element={<Home />}/>
       <Route path='/about' element={<About />}/>
+      <Route path='/contacts' element={<Contacts />}/>
       <Route path='/sign-in' element={<SignIn />}/>
       <Route path='/sign-up' element={<SignUp />}/>
       <Route path="/listing/:listingId" element={<Listing />} />

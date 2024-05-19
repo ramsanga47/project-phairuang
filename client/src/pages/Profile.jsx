@@ -21,6 +21,7 @@ import {
   signOutUserFailure,
 } from "../redux/user/userSlice";
 import { Link } from "react-router-dom";
+import Header from "../components/Header";
 
 const Profile = () => {
   const fileRef = useRef(null);
@@ -165,7 +166,10 @@ const Profile = () => {
   }
 
   return (
-    <div className="p-3 max-w-lg mx-auto ">
+    <>
+    <Header />
+    <div className="bg-white">
+    <div className="p-3 max-w-lg mx-auto bg-white rounded-lg border-gray-300 ">
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
       <form action="" className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <input
@@ -220,7 +224,7 @@ const Profile = () => {
 
         <button
           disabled={loading}
-          className="bg-slate-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95"
+          className="bg-white  text-gray-700 p-3 rounded-full uppercase text-center hover:opacity-95 border border-gray-200 "
         >
           {loading ? "Loading..." : "Update"}
         </button>
@@ -292,6 +296,8 @@ const Profile = () => {
         </div>
       )}
     </div>
+    </div>
+    </>
   );
 };
 

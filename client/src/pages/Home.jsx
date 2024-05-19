@@ -5,6 +5,7 @@ import { Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
+import Header from '../components/Header'
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -46,19 +47,41 @@ export default function Home() {
     fetchOfferListings();
   }, []);
   return (
-    <div>
-      {/* top */}
-      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
+    <>
+    <section>
+    <Header />
+    <h1>Discover your new Home</h1>
+    <Link
+          to={'/search'}
+          className='text-xs sm:text-sm text-blue-800 font-bold hover:underline'
+        >
+          Let's get started...
+        </Link>
+        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <i className="fas fa-search text-black-400"></i>
+        </div>
+        
+        
+      
+
+
+        
+      </section>
+    </>
+  );
+}
+
+{/* top */}
+      {/* <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
         <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl'>
-          Find your next <span className='text-slate-500'>perfect</span>
+          
           <br />
-          place with ease
+          
         </h1>
         <div className='text-gray-400 text-xs sm:text-sm'>
-          Sahand Estate is the best place to find your next perfect place to
-          live.
+          
           <br />
-          We have a wide range of properties for you to choose from.
+          
         </div>
         <Link
           to={'/search'}
@@ -66,10 +89,10 @@ export default function Home() {
         >
           Let's get started...
         </Link>
-      </div>
+      </div> */}
 
       {/* swiper */}
-      <Swiper navigation>
+      {/* <Swiper navigation>
         {offerListings &&
           offerListings.length > 0 &&
           offerListings.map((listing) => (
@@ -84,11 +107,11 @@ export default function Home() {
               ></div>
             </SwiperSlide>
           ))}
-      </Swiper>
+      </Swiper> */}
 
       {/* listing results for offer, sale and rent */}
 
-      <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
+      {/* <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
         {offerListings && offerListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
@@ -128,7 +151,4 @@ export default function Home() {
             </div>
           </div>
         )}
-      </div>
-    </div>
-  );
-}
+      </div> */}
