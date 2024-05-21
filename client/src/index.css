@@ -9,7 +9,8 @@ body{
 
 
 .bg-half-screen-image {
-    background-image: url('../public/images/pexels-ylanite-koppens-1445416\ 1bg.jpg');
+  background-image: url('../public/images/pexels-ylanite-koppens-1445416 1bg.jpg');
+
     height: 100vh;
     background-repeat: no-repeat;
     z-index: -9999;
