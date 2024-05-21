@@ -8,6 +8,7 @@ import {
 import { app } from "../firebase.js";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import Header from "../components/Header.jsx";
 
 const UpdateListing = () => {
   const [files, setFiles] = useState([]);
@@ -17,6 +18,7 @@ const UpdateListing = () => {
     description: "",
     address: "",
     type: "rent",
+    conatact:"",
     bedrooms: 1,
     bathrooms: 1,
     regularPrice: 50,
@@ -185,6 +187,8 @@ const UpdateListing = () => {
   };
 
   return (
+    <>
+    <Header />
     <main className="p-3 max-w-4xl mx-auto">
       <h1 className="text-3xl font-semibold text-center my-7">
         Update Listing
@@ -193,7 +197,7 @@ const UpdateListing = () => {
         <div className="flex flex-col gap-4 flex-1">
           <input
             type="text"
-            placeholder="Name"
+            placeholder="District"
             className="border p-3 rounded-lg"
             id="name"
             maxLength="62"
@@ -219,6 +223,15 @@ const UpdateListing = () => {
             required
             onChange={handleChange}
             value={formData.address}
+          />
+          <input
+            type="text"
+            placeholder="contact"
+            className="border p-3 rounded-lg"
+            id="contact"
+            required
+            onChange={handleChange}
+            value={formData.conatact}
           />
 
           <div className="flex gap-6 flex-wrap">
@@ -395,6 +408,7 @@ const UpdateListing = () => {
         </div>
       </form>
     </main>
+    </>
   );
 };
 

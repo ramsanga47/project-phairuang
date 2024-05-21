@@ -173,7 +173,7 @@ const handleSubmit =async (e) =>{
         <div className="flex flex-col gap-4 flex-1">
           <input
             type="text"
-            placeholder="Name"
+            placeholder="District"
             className="border p-3 rounded-1g"
             id="name"
             maxLength="62"
@@ -258,14 +258,13 @@ const handleSubmit =async (e) =>{
                 onChange={handleChange}
                 value={formData.bathrooms}
               />
-              <p>Baths</p>
+              <p>Bathrooms</p>
             </div>
             <div className="flex items-center gap-2">
               <input
                 type="number"
                 id="regularPrice"
-                min="50"
-                max="1000000"
+              
                 required
                 className="p-3 border border-gray-300 rounded-lg"
                 onChange={handleChange}
@@ -280,8 +279,7 @@ const handleSubmit =async (e) =>{
               <input
                 type="number"
                 id="discountPrice"
-                min="0"
-                max="10000000"
+                
                 required
                 className="p-3 border border-gray-300 rounded-lg"
                 onChange={handleChange}

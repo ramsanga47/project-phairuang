@@ -168,9 +168,9 @@ const Profile = () => {
   return (
     <>
     <Header />
-    <div className="bg-white">
-    <div className="p-3 max-w-lg mx-auto bg-white rounded-lg border-gray-300 ">
-      <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
+    <div className="bg-gray-100">
+    <div className="p-3 max-w-lg mx-auto bg-gray-100 rounded-lg border-gray-300 ">
+      <h1 className=" text-center my-7 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">Profile</h1>
       <form action="" className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <input
           onChange={(e) => setFile(e.target.files[0])}
@@ -224,12 +224,12 @@ const Profile = () => {
 
         <button
           disabled={loading}
-          className="bg-white  text-gray-700 p-3 rounded-full uppercase text-center hover:opacity-95 border border-gray-200 "
+          className="bg-[#125C66]  text-white p-3 rounded-full uppercase text-center hover:bg-black hover:text-white border border-gray-200 "
         >
           {loading ? "Loading..." : "Update"}
         </button>
         <Link
-          className="bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95"
+          className="bg-[#B42AAE] text-white p-3 rounded-full uppercase text-center hover:opacity-95"
           to={"/create-listing"}
         >
           Create Listing
@@ -239,16 +239,16 @@ const Profile = () => {
       <div className="flex justify-between mt-5">
         <span
           onClick={handleDeleteUser}
-          className="text-red-700 cursor-pointer"
+          className="text-[#125C66] cursor-pointer"
         >
           Delete account
         </span>
-        <span onClick={handleSignOut} className="text-red-700 cursor-pointer">
+        <span onClick={handleSignOut} className="text-blue-700 cursor-pointer">
           Sign Out
         </span>
       </div>
       <p className="text-red-700 mt-5">{error ? error : ""}</p>
-      <p className="text-green-700 mt-5">
+      <p className="text-green-600 mt-5">
         {updateSuccess ? "Profile updated successfully!" : ""}
       </p>
 

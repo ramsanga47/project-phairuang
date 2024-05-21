@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import SwiperCore from 'swiper';
-import 'swiper/css/bundle';
-import ListingItem from '../components/ListingItem';
-import Header from '../components/Header'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import SwiperCore from "swiper";
+import "swiper/css/bundle";
+import ListingItem from "../components/ListingItem";
+import Header from "../components/Header";
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     const fetchOfferListings = async () => {
       try {
-        const res = await fetch('/api/listing/get?offer=true&limit=4');
+        const res = await fetch("/api/listing/get?offer=true&limit=4");
         const data = await res.json();
         setOfferListings(data);
         fetchRentListings();
@@ -26,7 +26,7 @@ export default function Home() {
     };
     const fetchRentListings = async () => {
       try {
-        const res = await fetch('/api/listing/get?type=rent&limit=4');
+        const res = await fetch("/api/listing/get?type=rent&limit=4");
         const data = await res.json();
         setRentListings(data);
         fetchSaleListings();
@@ -37,7 +37,7 @@ export default function Home() {
 
     const fetchSaleListings = async () => {
       try {
-        const res = await fetch('/api/listing/get?type=sale&limit=4');
+        const res = await fetch("/api/listing/get?type=sale&limit=4");
         const data = await res.json();
         setSaleListings(data);
       } catch (error) {
@@ -48,70 +48,49 @@ export default function Home() {
   }, []);
   return (
     <>
-    <section>
-    <Header />
-    <h1>Discover your new Home</h1>
-    <Link
-          to={'/search'}
-          className='text-xs sm:text-sm text-blue-800 font-bold hover:underline'
-        >
-          Let's get started...
-        </Link>
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <i className="fas fa-search text-black-400"></i>
+      <section className="bg-half-screen-image">
+        <Header />
+        <div className="  text-center pt-48">
+          <h1 className="text-gray-700 font-bold text-8xl">
+            Discover <span className="text-white">your</span> <br /> new
+            <span className="text-[#125C66] "> Home</span>
+          </h1>
+          <p className="p-5 font-bold text-gray-700">The best place to find you new Home in Mizoram</p>
+
+          <button className="mt-5">
+            <div className="flex rounded-full bg-white gap-6  items-center shadow-md">
+              <div className="pl-5 flex gap-2 font-semibold text-gray-500">
+                Browse through our listings{" "}
+                <svg
+                  class="w-6 h-6 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 12H5m14 0-4 4m4-4-4-4"
+                  />
+                </svg>
+              </div>
+              <Link to={"/search"} className="text-xs sm:text-sm text-white ">
+              <div className="relative rounded-full bg-[#B42AAE] p-3 px-7  hover:bg-black">
+                
+                  Get Started
+              
+              </div>
+              </Link>
+            </div>
+          </button>
         </div>
-        
-        
-      
-
-
-        
       </section>
-    </>
-  );
-}
-
-{/* top */}
-      {/* <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
-        <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl'>
-          
-          <br />
-          
-        </h1>
-        <div className='text-gray-400 text-xs sm:text-sm'>
-          
-          <br />
-          
-        </div>
-        <Link
-          to={'/search'}
-          className='text-xs sm:text-sm text-blue-800 font-bold hover:underline'
-        >
-          Let's get started...
-        </Link>
-      </div> */}
-
-      {/* swiper */}
-      {/* <Swiper navigation>
-        {offerListings &&
-          offerListings.length > 0 &&
-          offerListings.map((listing) => (
-            <SwiperSlide>
-              <div
-                style={{
-                  background: `url(${listing.imageUrls[0]}) center no-repeat`,
-                  backgroundSize: 'cover',
-                }}
-                className='h-[500px]'
-                key={listing._id}
-              ></div>
-            </SwiperSlide>
-          ))}
-      </Swiper> */}
-
-      {/* listing results for offer, sale and rent */}
-
-      {/* <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
+      <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
         {offerListings && offerListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
@@ -151,4 +130,8 @@ export default function Home() {
             </div>
           </div>
         )}
-      </div> */}
+      </div> 
+    </>
+  );
+}
+
