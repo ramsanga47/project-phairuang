@@ -22,15 +22,15 @@ const About = () => {
 
             <div class="flex items-center mt-12 space-x-4">
                 <div class="flex items-center justify-center w-24 h-24 rounded-full ring-2 ring-fuchsia-600">
-                    <img class="object-cover w-20 h-20 rounded-full" src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/9/avatar-1.jpg" alt="" />
+                    <img class="object-cover w-20 h-20 rounded-full" src="images/my profile.jpg" alt="" />
                 </div>
 
                 <div class="flex items-center justify-center w-24 h-24 rounded-full ring-2 ring-transparent">
-                    <img class="object-cover w-20 h-20 rounded-full" src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/9/avatar-2.jpg" alt="" />
+                    <img class="object-cover w-20 h-20 rounded-full" src="images/Andrew.jpg" alt="" />
                 </div>
 
                 <div class="flex items-center justify-center w-24 h-24 rounded-full ring-2 ring-transparent">
-                    <img class="object-cover w-20 h-20 rounded-full" src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/9/avatar-3.jpg" alt="" />
+                    <img class="object-cover w-20 h-20 rounded-full" src="images/chhunga.jpg" alt="" />
                 </div>
             </div>
         </div>

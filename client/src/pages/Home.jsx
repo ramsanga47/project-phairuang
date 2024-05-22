@@ -12,7 +12,7 @@ export default function Home() {
   const [saleListings, setSaleListings] = useState([]);
   const [rentListings, setRentListings] = useState([]);
   SwiperCore.use([Navigation]);
-  console.log(offerListings);
+ 
   useEffect(() => {
     const fetchOfferListings = async () => {
       try {
@@ -62,7 +62,7 @@ export default function Home() {
               <div className="pl-5 flex gap-2 font-semibold text-gray-500">
                 Browse through our listings{" "}
                 <svg
-                  class="w-6 h-6 text-gray-800 dark:text-white"
+                  className="w-6 h-6 text-gray-800 dark:text-white"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -72,9 +72,9 @@ export default function Home() {
                 >
                   <path
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M19 12H5m14 0-4 4m4-4-4-4"
                   />
                 </svg>

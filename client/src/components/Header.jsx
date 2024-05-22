@@ -46,28 +46,28 @@ const Header = () => {
                 <button type="button" className="inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100">
                    
                     <svg className="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8h16M4 16h16"></path>
                     </svg>
 
                     
                     <svg className="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
 
                 <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
                   <Link to="/">
-                    <a href="#" title="" className="text-base  transition-all duration-200 hover:text-opacity-80"> Home </a>
+                    <div href="#" title="" className="text-base  transition-all duration-200 hover:text-opacity-80"> Home </div>
                   </Link>
 
                    <Link to="/about">
                   
-                   <a href="#" title="" className="text-base  transition-all duration-200 hover:text-opacity-80"> About </a>
+                   <div href="#" title="" className="text-base  transition-all duration-200 hover:text-opacity-80"> About </div>
 
                    </Link>
                    <Link to="/contacts">
                   
-                  <a href="#" title="" className="text-base  transition-all duration-200 hover:text-opacity-80"> Contact </a>
+                  <div href="#" title="" className="text-base  transition-all duration-200 hover:text-opacity-80"> Contact </div>
 
                   </Link>
 
@@ -78,7 +78,7 @@ const Header = () => {
                   {currentUser?(<img src={currentUser.avatar} alt="avatar" className="rounded-full h-7 w-7 object-cover"/>):("Sign in")}
                 </Link>
                 <Link to="/sign-up">
-                <a href="#" title="" className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-base transition-all duration-200 hover:bg-black font-semibold text-white bg-[#B42AAE] rounded-full" role="button"> Sign up </a>
+                <div href="#" title="" className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-base transition-all duration-200 hover:bg-black font-semibold text-white bg-[#B42AAE] rounded-full" role="button"> Sign up </div>
 
                 </Link>
 
